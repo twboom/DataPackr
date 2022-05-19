@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import { init } from './generator/init.mjs';
+import { generateBoilerplate } from './generator/boilerplate.mjs';
 
 // Valid operations
-const operations = ['build', 'startproject'];
+const operations = ['build', 'startproject', 'boilerplate'];
 
 // Main function
 function main() {
@@ -17,6 +18,10 @@ function main() {
 
         case 'start':
             init();
+            break;
+
+        case 'boilerplate':
+            generateBoilerplate();
             break;
 
         case undefined:
